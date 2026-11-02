@@ -1,0 +1,649 @@
+/* =========================================================
+   ClimaTech — Ar-condicionado e Refrigeração
+   Variáveis, reset e base. Cada seção ganha seu próprio
+   bloco de estilos nos próximos passos.
+   ========================================================= */
+
+:root {
+  /* Cores */
+  --color-primary: #0B6E99;
+  --color-primary-dark: #084D6E;
+  --color-accent: #FF7A3D;
+  --color-accent-dark: #E05F22;
+  --color-bg: #F7FAFC;
+  --color-surface: #FFFFFF;
+  --color-text: #1A2128;
+  --color-text-muted: #5B6B76;
+  --color-border: #E1E8ED;
+  --color-success: #2E7D32;
+  --color-error: #C62828;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE57;
+
+  /* Tipografia */
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Espaçamentos (escala em rem) */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+
+  /* Outros */
+  --radius: 10px;
+  --max-width: 1120px;
+  --focus-ring: 3px solid var(--color-accent);
+}
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Visibilidade de foco acessível em qualquer elemento interativo */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Container padrão usado por todas as seções */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+/* Botão reutilizável (CTAs do header, hero, formulário etc.) */
+.btn {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  text-align: center;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--accent {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn--accent:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.btn--lg {
+  padding: var(--space-2) var(--space-4);
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  position: relative;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+}
+
+/* Botão hambúrguer — só aparece no mobile */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-inline: auto;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.is-open .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menu — colapsado em dropdown no mobile */
+.primary-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3);
+}
+
+.primary-nav:not(.is-open) {
+  display: none;
+}
+
+.primary-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.primary-nav a:not(.btn) {
+  display: block;
+  padding: var(--space-1) 0;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.primary-nav a:not(.btn):hover {
+  color: var(--color-primary);
+}
+
+.nav-cta {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .primary-nav,
+  .primary-nav:not(.is-open) {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .primary-nav ul {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  padding-block: var(--space-6) var(--space-5);
+}
+
+.hero__inner {
+  max-width: 640px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.hero__title {
+  font-size: clamp(1.75rem, 1rem + 4vw, 2.75rem);
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   Seção genérica (título + subtítulo), reaproveitada por
+   Serviços, Galeria e Depoimentos
+   ========================================================= */
+
+.section {
+  padding-block: var(--space-6);
+}
+
+.section__header {
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: var(--space-5);
+  text-align: center;
+}
+
+.section__title {
+  font-size: clamp(1.5rem, 1rem + 2vw, 2rem);
+  color: var(--color-primary-dark);
+}
+
+.section__subtitle {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Serviços
+   ========================================================= */
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+
+.service-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(11, 110, 153, 0.12);
+}
+
+.service-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #E6F2F7;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.service-card__title {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-1);
+}
+
+.service-card__text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Galeria
+   ========================================================= */
+
+.gallery {
+  background-color: var(--color-surface);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.gallery__item figure {
+  margin: 0;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+}
+
+.gallery__item figcaption {
+  margin-top: var(--space-1);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.gallery__item figcaption a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* =========================================================
+   Depoimentos
+   ========================================================= */
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.testimonial-card {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-3) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.testimonial-card__badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background-color: #E6F2F7;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.testimonial-card__quote {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-card__quote p::before {
+  content: "“";
+}
+
+.testimonial-card__quote p::after {
+  content: "”";
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.testimonial-card__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.testimonial-card__role {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   Formulário de orçamento
+   ========================================================= */
+
+.orcamento {
+  background-color: var(--color-bg);
+}
+
+.quote-form {
+  max-width: 560px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font: inherit;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.form-error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-error);
+}
+
+.form-error:not([hidden])::before {
+  content: "⚠ ";
+}
+
+.form-status {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.form-status--success {
+  background-color: #E8F5E9;
+  color: var(--color-success);
+}
+
+.form-status--error {
+  background-color: #FDECEA;
+  color: var(--color-error);
+}
+
+/* =========================================================
+   Botão flutuante do WhatsApp
+   ========================================================= */
+
+.whatsapp-float {
+  position: fixed;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-whatsapp);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  z-index: 200;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: var(--color-whatsapp-dark);
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: rgba(255, 255, 255, 0.9);
+  padding-block: var(--space-5);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.footer__brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: var(--space-2);
+}
+
+.footer__address {
+  font-style: normal;
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+}
+
+.footer__contact {
+  line-height: 1.8;
+  margin-bottom: var(--space-3);
+}
+
+.footer__contact a,
+.footer__address {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer__contact a {
+  text-decoration: underline;
+}
+
+.footer__copy {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__map iframe {
+  width: 100%;
+  height: 220px;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .footer__map iframe {
+    height: 260px;
+  }
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClimaTech | Ar-condicionado e Refrigeração em São Paulo</title>
+  <meta name="description" content="Instalação, manutenção, conserto e limpeza de ar-condicionado em São Paulo. Orçamento rápido pelo WhatsApp com a ClimaTech.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ClimaTech | Ar-condicionado e Refrigeração">
+  <meta property="og:description" content="Instalação, manutenção, conserto e limpeza de ar-condicionado em São Paulo. Peça seu orçamento agora.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">ClimaTech</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+        <a href="#orcamento" class="btn btn--accent nav-cta">Pedir orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Seu ar-condicionado em boas mãos.</h1>
+        <p class="hero__subtitle">Instalação, manutenção e conserto com atendimento rápido para sua casa ou negócio. Peça um orçamento agora e receba resposta no mesmo dia.</p>
+        <a href="#orcamento" class="btn btn--accent btn--lg">Pedir orçamento</a>
+      </div>
+    </section>
+
+    <section id="servicos" class="section services">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Nossos serviços</h2>
+          <p class="section__subtitle">Soluções completas em ar-condicionado e refrigeração para residências e empresas em São Paulo.</p>
+        </div>
+
+        <ul class="services__grid">
+          <li class="service-card">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="4" y="9" width="24" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M9 23l1.5-4M16 23l0-4M23 23l-1.5-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M9 14h2M13 14h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3 class="service-card__title">Instalação</h3>
+            <p class="service-card__text">Instalação completa de split, janela ou multi-split, com padronização elétrica e teste de funcionamento.</p>
+          </li>
+
+          <li class="service-card">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="4.5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M16 5v3M16 24v3M27 16h-3M8 16H5M23.3 8.7l-2.1 2.1M10.8 21.1l-2.1 2.1M23.3 23.3l-2.1-2.1M10.8 10.8L8.7 8.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3 class="service-card__title">Manutenção</h3>
+            <p class="service-card__text">Manutenção preventiva periódica para manter o rendimento, evitar panes e prolongar a vida útil do aparelho.</p>
+          </li>
+
+          <li class="service-card">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M21.5 6.5a5 5 0 00-6.8 6l-10 10 3 3 10-10a5 5 0 006-6.8l-3.2 3.2-3-3 3.2-3.2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3 class="service-card__title">Conserto</h3>
+            <p class="service-card__text">Diagnóstico e reparo de vazamentos, ruídos e falhas elétricas, com peças de qualidade e garantia.</p>
+          </li>
+
+          <li class="service-card">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 5c4 5.5 7 9.6 7 13a7 7 0 11-14 0c0-3.4 3-7.5 7-13z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M12.5 20.5a3.5 3.5 0 003.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3 class="service-card__title">Limpeza</h3>
+            <p class="service-card__text">Higienização de filtros e serpentinas, melhorando a qualidade do ar e o desempenho do equipamento.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="galeria" class="section gallery">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Galeria</h2>
+          <p class="section__subtitle">Alguns dos equipamentos e serviços que instalamos e mantemos em São Paulo.</p>
+        </div>
+
+        <ul class="gallery__grid">
+          <li class="gallery__item">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1757219525975-03b5984bc6e8?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Ar-condicionado split instalado na parede de um ambiente interno" loading="lazy" width="800" height="600">
+              <figcaption>Foto: <a href="https://unsplash.com/@andrianspace" target="_blank" rel="noopener">Andrianto Cahyono Putro</a> / Unsplash</figcaption>
+            </figure>
+          </li>
+
+          <li class="gallery__item">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Unidade externa de ar-condicionado instalada sobre parede de tijolos" loading="lazy" width="800" height="600">
+              <figcaption>Foto: <a href="https://unsplash.com/@everettp" target="_blank" rel="noopener">Everett Pachmann</a> / Unsplash</figcaption>
+            </figure>
+          </li>
+
+          <li class="gallery__item">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1667983453881-4992fe86ab1b?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Unidades de ar-condicionado instaladas na fachada de um prédio comercial" loading="lazy" width="800" height="600">
+              <figcaption>Foto: <a href="https://unsplash.com/@kienday" target="_blank" rel="noopener">Kien Nguyen</a> / Unsplash</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="section testimonials">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">O que dizem nossos clientes</h2>
+          <p class="section__subtitle">Depoimentos ilustrativos, criados para fins de demonstração deste site.</p>
+        </div>
+
+        <ul class="testimonials__grid">
+          <li class="testimonial-card">
+            <span class="testimonial-card__badge">Depoimento de exemplo</span>
+            <blockquote class="testimonial-card__quote">
+              <p>O ar-condicionado da loja parou no meio do verão e a equipe veio no mesmo dia. Resolveram rápido e com preço justo.</p>
+            </blockquote>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__avatar" aria-hidden="true">MG</span>
+              <div>
+                <p class="testimonial-card__name">Marta González</p>
+                <p class="testimonial-card__role">Dona de restaurante</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="testimonial-card">
+            <span class="testimonial-card__badge">Depoimento de exemplo</span>
+            <blockquote class="testimonial-card__quote">
+              <p>Fizeram a manutenção dos 6 aparelhos do nosso escritório em uma manhã só. Atendimento pontual e explicaram tudo.</p>
+            </blockquote>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__avatar" aria-hidden="true">CD</span>
+              <div>
+                <p class="testimonial-card__name">Carlos Duarte</p>
+                <p class="testimonial-card__role">Gerente de loja</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="testimonial-card">
+            <span class="testimonial-card__badge">Depoimento de exemplo</span>
+            <blockquote class="testimonial-card__quote">
+              <p>Instalação limpa, sem bagunça, e o aparelho ficou bem silencioso. Recomendo para quem tem comércio na região.</p>
+            </blockquote>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__avatar" aria-hidden="true">PR</span>
+              <div>
+                <p class="testimonial-card__name">Paola Ramírez</p>
+                <p class="testimonial-card__role">Proprietária de salão</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Passo 9: Formulário de orçamento -->
+    <section id="orcamento" class="section orcamento">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Peça seu orçamento</h2>
+          <p class="section__subtitle">Preencha os dados abaixo e você será direcionado ao nosso WhatsApp com a mensagem já pronta.</p>
+        </div>
+
+        <form class="quote-form" id="quoteForm" novalidate>
+          <div class="form-field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error" aria-invalid="false">
+            <p class="form-error" id="name-error" role="alert" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="Ex: (11) 91234-5678" aria-describedby="whatsapp-error" aria-invalid="false">
+            <p class="form-error" id="whatsapp-error" role="alert" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label for="service">Tipo de serviço</label>
+            <select id="service" name="service" aria-describedby="service-error" aria-invalid="false">
+              <option value="" selected>Selecione um serviço</option>
+              <option value="Instalação">Instalação</option>
+              <option value="Manutenção">Manutenção</option>
+              <option value="Conserto">Conserto</option>
+              <option value="Limpeza">Limpeza</option>
+            </select>
+            <p class="form-error" id="service-error" role="alert" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" placeholder="Conte um pouco sobre o que você precisa" aria-describedby="message-error" aria-invalid="false"></textarea>
+            <p class="form-error" id="message-error" role="alert" hidden></p>
+          </div>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
+
+          <button type="submit" class="btn btn--accent btn--lg">Enviar pedido</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Número de exemplo: troque pelo WhatsApp real da empresa antes de publicar -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/5511912345678?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento%20de%20ar-condicionado."
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar no WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+      <path d="M16 4C9.4 4 4 9.4 4 16c0 2.3.6 4.4 1.7 6.3L4 28l5.9-1.6c1.8 1 3.9 1.6 6.1 1.6 6.6 0 12-5.4 12-12S22.6 4 16 4z" fill="currentColor"/>
+      <path d="M12.3 10.6c-.3-.6-.6-.6-.9-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.3 2.6 4.1 6.4 5.6 3.1 1.2 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5-.3-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-.9 1.2-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.2-.2.3-.4.5-.6.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6-.1-.2-.8-2-1.1-2.5z" fill="#25D366"/>
+    </svg>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__info">
+        <p class="footer__brand">ClimaTech</p>
+        <address class="footer__address">
+          Rua Vergueiro, 1877<br>
+          Vila Mariana, São Paulo - SP
+        </address>
+        <p class="footer__contact">
+          WhatsApp: <a href="https://wa.me/5511912345678">+55 11 91234-5678</a><br>
+          E-mail: <a href="mailto:contato@climatech.com">contato@climatech.com</a>
+        </p>
+        <p class="footer__copy">&copy; <span id="footer-year"></span> ClimaTech. Site de demonstração para portfólio.</p>
+      </div>
+
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps?q=Rua+Vergueiro+1877,+Vila+Mariana,+S%C3%A3o+Paulo,+SP&output=embed"
+          title="Localização da ClimaTech no mapa"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
