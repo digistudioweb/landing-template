@@ -158,10 +158,20 @@ select:focus-visible {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--color-primary);
+}
+
+/* Ícone decorativo ao lado do nome (o mesmo arquivo do favicon) */
+.logo__icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
 /* Botão hambúrguer — só aparece no mobile */
