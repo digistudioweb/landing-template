@@ -10,14 +10,44 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="ClimaTech | Ar-condicionado e Refrigeração">
   <meta property="og:description" content="Instalação, manutenção, conserto e limpeza de ar-condicionado em São Paulo. Peça seu orçamento agora.">
-  <meta property="og:image" content="assets/og-image.jpg">
+  <!-- Troque DOMINIO pelo endereço real do site. O WhatsApp só mostra a imagem com URL completa. -->
+  <meta property="og:url" content="https://DOMINIO/">
+  <meta property="og:image" content="https://DOMINIO/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
 
+  <!-- SVG para navegadores modernos, PNG de reserva (Safari e outros) e ícone da tela inicial do iPhone -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Dados estruturados para o Google. Troque o @type pelo do cliente (Dentist, Attorney, ProfessionalService...)
+       e use só dados reais: apague os campos que o cliente não tiver. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HVACBusiness",
+    "name": "ClimaTech",
+    "description": "Instalação, manutenção, conserto e limpeza de ar-condicionado em São Paulo.",
+    "url": "https://DOMINIO/",
+    "image": "https://DOMINIO/assets/og-image.jpg",
+    "telephone": "+5511912345678",
+    "email": "contato@climatech.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Vergueiro, 1877",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "areaServed": "São Paulo"
+  }
+  </script>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -268,6 +298,7 @@
           E-mail: <a href="mailto:contato@climatech.com">contato@climatech.com</a>
         </p>
         <p class="footer__copy">&copy; <span id="footer-year"></span> ClimaTech. Site de demonstração para portfólio.</p>
+        <p class="footer__credit">Feito por <a href="https://instagram.com/digistudio.web" target="_blank" rel="noopener">Digi Studio</a></p>
       </div>
 
       <div class="footer__map">

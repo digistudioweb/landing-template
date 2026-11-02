@@ -630,6 +630,18 @@ select:focus-visible {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Crédito da Digi Studio: pequeno e discreto */
+.footer__credit {
+  margin-top: var(--space-1);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__credit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .footer__map iframe {
   width: 100%;
   height: 220px;
